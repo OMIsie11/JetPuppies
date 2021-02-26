@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JetPuppies</string>
+
+    <!-- Bottom bar items titles -->
+    <string name="bottom_bar_item_home">Home</string>
+    <string name="bottom_bar_item_liked">Liked</string>
+    <string name="bottom_bar_item_settings">Settings</string>
+
+</resources>
