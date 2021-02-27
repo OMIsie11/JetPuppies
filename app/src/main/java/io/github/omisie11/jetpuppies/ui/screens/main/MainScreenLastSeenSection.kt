@@ -67,7 +67,7 @@ fun LastSeenPuppyCardItem(
         Column(
             modifier = Modifier
                 .clickable(onClick = onClick)
-                .padding(8.dp),
+                .padding(0.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             CoilImage(
