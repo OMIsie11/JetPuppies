@@ -10,7 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import dev.chrisbanes.accompanist.coil.CoilImage
@@ -24,16 +27,20 @@ fun AllPuppiesListSection(
 ) {
     Column(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+            .fillMaxWidth(),
     ) {
         Text(
-            text = "All puppies waiting for You!",
-            modifier = Modifier.padding(8.dp),
+            text = "All puppies",
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+            style = TextStyle(
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Light
+            )
         )
         Spacer(modifier = Modifier.size(8.dp))
         LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+            modifier = Modifier.padding(horizontal = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             items(puppies) { puppy ->
                 PuppyListItem(
