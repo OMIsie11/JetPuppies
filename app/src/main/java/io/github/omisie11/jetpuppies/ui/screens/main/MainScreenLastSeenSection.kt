@@ -76,7 +76,6 @@ fun LastSeenPuppyCardItem(
             Text(
                 modifier = Modifier.padding(horizontal = 8.dp),
                 text = puppy.name,
-
                 textAlign = TextAlign.Center
             )
         }
