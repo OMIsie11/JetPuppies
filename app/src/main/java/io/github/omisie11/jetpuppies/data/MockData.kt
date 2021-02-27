@@ -2,6 +2,13 @@ package io.github.omisie11.jetpuppies.data
 
 import io.github.omisie11.jetpuppies.model.Puppy
 
+val singlePuppy = Puppy(
+    "Terry",
+    "Terrier Fox",
+    "https://images.dog.ceo/breeds/terrier-fox/n02095314_3451.jpg",
+    "Bio of this gentleman"
+)
+
 val lastSeenPuppies = listOf<Puppy>(
     Puppy(
         "Bingo",

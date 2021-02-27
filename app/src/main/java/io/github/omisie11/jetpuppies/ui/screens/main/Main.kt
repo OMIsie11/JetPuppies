@@ -9,19 +9,18 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import io.github.omisie11.jetpuppies.data.lastSeenPuppies
 import io.github.omisie11.jetpuppies.data.puppies
-import io.github.omisie11.jetpuppies.ui.theme.JetPuppiesTheme
 
 @Composable
-fun MainScreen() {
-
+fun MainScreen(navController: NavController) {
     Scaffold(
         bottomBar = {
             BottomBar(
+                navController = navController,
                 items = listOf(
                     BottomNavigationScreens.HomeScreen,
                     BottomNavigationScreens.LikedScreen,
@@ -36,15 +35,16 @@ fun MainScreen() {
                 modifier = Modifier.padding(8.dp),
                 fontSize = 24.sp,
             )
-            LastSeenSection(lastSeenPuppies)
+            LastSeenSection(navController, lastSeenPuppies)
             Spacer(modifier = Modifier.size(8.dp))
-            AllPuppiesListSection(puppies)
+            AllPuppiesListSection(navController, puppies)
         }
     }
 }
 
 @Composable
 fun BottomBar(
+    navController: NavController,
     items: List<BottomNavigationScreens>
 ) {
     BottomNavigation {
@@ -67,13 +67,5 @@ fun BottomBar(
                     Log.d("BottomBar", "Item clicked: ${screen.title}")
                 })
         }
-    }
-}
-
-@Preview
-@Composable
-fun MainScreenPreview() {
-    JetPuppiesTheme {
-        MainScreen()
     }
 }

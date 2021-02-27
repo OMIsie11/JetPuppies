@@ -11,11 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import dev.chrisbanes.accompanist.coil.CoilImage
 import io.github.omisie11.jetpuppies.model.Puppy
 
 @Composable
 fun AllPuppiesListSection(
+    navController: NavController,
     puppies: List<Puppy>,
     modifier: Modifier = Modifier,
 ) {
@@ -36,7 +39,7 @@ fun AllPuppiesListSection(
                 PuppyListItem(
                     puppy = puppy,
                     onClick = {
-                        // Todo: navigate to details
+                        navController.navigate("details")
                     })
             }
         }

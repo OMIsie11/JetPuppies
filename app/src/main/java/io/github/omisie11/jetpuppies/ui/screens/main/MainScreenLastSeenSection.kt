@@ -17,11 +17,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import dev.chrisbanes.accompanist.coil.CoilImage
 import io.github.omisie11.jetpuppies.model.Puppy
 
 @Composable
 fun LastSeenSection(
+    navController: NavController,
     puppies: List<Puppy>,
     modifier: Modifier = Modifier
 ) {
@@ -37,9 +40,7 @@ fun LastSeenSection(
                 LastSeenPuppyCardItem(
                     puppy = puppy,
                     modifier = Modifier.padding(8.dp),
-                    onClick = {
-                        // Todo: navigate to details
-                    }
+                    onClick = { navController.navigate("details") }
                 )
             }
         }
